@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Welcome to Omniscope Labs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=0.60" minimum-scale=0.60, maximum-scale=0.60>
+<style>
+@font-face{
+    font-family: sans-serif;
+    
+}
+ /* styling navlist */
+ #navlist {
+            background-color: #97a2ab;
+            position: absolute;
+            width: 100%;
+        }
+         
+        /* styling navlist anchor element */
+        #navlist a {
+            float:left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .navlist-right{
+            float:right;
+        }
+         
+        /* hover effect of navlist anchor element */
+        #navlist a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+         
+        /* styling search bar */
+        .search input[type=text]{
+            width:300px;
+            height:25px;
+            border-radius:25px;
+            border: none;
+         
+        }
+         
+        .search{
+            float:right;
+            margin:7px;
+         
+        }
+         
+        .search button{
+            background-color: #65b6f0;
+            color: #f2f2f2;
+            float: right;
+            padding: 10px 10px;
+            margin-right: 16px;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+        }
+.center{
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+    width:50%;
+    height:300px;
+    width:300px;
+}
+img{
+    height:200px;
+    width:200px;
+}
+#left{
+    float:left;
+}
+#right{
+    float:right;
+}
+/* Tooltip container */
+.tooltip {
+  position: absolute;
+  text-align: right;
+  display: inline-block;
+  border-bottom: 1px dotted rgb(164, 243, 255); /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(171, 171, 171);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+body{
+    background-color: rgb(239, 239, 239);
+    /* margin: 40px; */
+}
+/* Tooltip text */
+.tooltip2{
+    position: absolute;
+  right: 20px;
+  text-align: right;
+  display: inline-block;
+  border-bottom: 1px dotted rgb(164, 243, 255)
+
+}
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip2 .tooltiptext2{
+    visibility: hidden;
+  width: 120px;
+  background-color: rgb(171, 171, 171);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+}
+/*flex container*/
+.ul{
+    padding:0;
+    margin:0;
+    list-style: none;
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+/*flex items*/
+.li{
+    background: rgb(193, 20, 20);
+    color:rgb(242, 138, 19);
+    text-align: center;
+    float:left;
+    height:15px;
+    width:20%;
+    padding:10px;
+    margin:0 1.5%;
+}
+.hlb1{
+    text-align: center;
+    float: left;
+    height:fit-content;
+    width:fit-content;
+    padding:10px;
+    margin:0 1.5%;
+}
+.hlb2{
+    text-align: center;
+    float: right;
+    height:fit-content;
+    width:fit-content;
+    padding:10px;
+    margin:0 1.5%;
+    position:relative;
+}
+.ln{
+    background-color: aqua;
+    color:purple;
+    text-align: center;
+    float:right;
+    height:15px;
+    width:150px;
+    padding:10px;
+    margin:0 1.5%;
+    right:0;
+    position:absolute;
+}
+.zoom{
+    padding:50px;
+    transition:transform 2s; /*animation*/
+    width:200px;
+    height:200px;
+    margin:0 auto;
+    z-index: 1;
+}
+.zoom:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.container{
+    width:150px;
+    border: 4px solid rgb(118, 28, 187);
+    position:
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+}
+.right{
+    position:absolute
+    right:0;
+}
+.lr{
+    background-color:orange;
+    color:blue;
+    text-align: center;
+    height: 15px;
+    width:150px;
+    padding:25px;
+    margin:10px;
+    position:absolute;
+    right:0; 
+}
+.ll{
+    height:15px;
+    padding:25px;
+    margin:10px;
+    color:white;
+    animation: color 4s linear infinite;
+    }
+    @keyframes color {
+  0%   { background: #f70303; }
+  20%  { background: #e88606; }
+  40%  { background: #d4cd07; }
+  60%  { background: #da9216; }
+  80%  { background: #ba5c04; }
+  100% { background: #fd5907; }
+    
+}
+/* a:link, a:visited{
+    background-color: grey;
+    color: white;
+    padding: 14px 25px;
+    height:10px;
+    width:20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+a:hover, a:active{
+    background-color:rgb(58, 58, 58); */
+
+</style>
+</head>
+
+<body>
+    <!--Navbar Items-->
+    <div id="navlist">
+        <a href="Drugspage.html">Browse</a>
+        <a href="Aboutus.html">About Us</a>
+        <a href="
+        nobody_can_help_you_now.htmml">Help</a>
+        <a href="You_are_already_indoctrinated.html">Community</a>
+    </div>
+    <br>
+    <br>
+    <div class="ul">
+        <div class="ll">
+            <marquee scrollamount=25>15% OFF: &nbsp;&nbsp;&nbsp;&nbsp;Diet Drugs &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Antidepressants
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Steroids &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Opiates &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Steroid Creams &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SSRIs &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Amphetamines &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Antibiotics &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Benzodiazepines &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Barbiturates</marquee></div>
+        <br>
+        <br>
+        <!--Search bar center align-->
+        <div class="search">
+            <form action="#">
+                <input type="text"
+                placeholder="Find Your Fix"
+                name="Search">
+                <button>
+                    <i class="fa fa-search"
+                    style="font-size: 18px;">
+                </i>
+                </button>
+            </form>
+        </div>
+
+        <img src="omnilogo.png"
+        height="350"> 
+<center>
+            <img src="HotPicks.png">
+    
+        <div class="ln">New Users
+            <div class="hlb2">
+                <br>
+                <a href="profilesetup.html">Profile Setup</a>
+                <br>
+                <div class="tooltip">
+                    <span class="tooltiptext">Dont ask any questions.</span>
+                <a href="faq">FAQ</a>
+                </div>
+                <br>
+                <div class="tooltip">
+                    <span class="tooltiptext">Because it is.  What, we don't seem trustworthy?</span>
+                <a href="You_should_learn_to_trust_our_process.html">How Are Our Products Safe?</a>
+                </div>
+                </div>
+        <br>
+        <!-- <a href="Whodafed.html">Whodafed</a> -->
+       </center>
+       
+    
+
+        
+        <div class="li">Categories</div>
+        <br>
+        <br>
+    &nbsp;&nbsp;&nbsp;<a href="Drugspage.html">Prescriptions
+    <br>
+    &nbsp;&nbsp;&nbsp;<a href="FoodCultures.html">Food Cultures</a><div class="tooltip">
+        <span class="tooltiptext">Join us, consume forever</span>
+    </div>
+    <br>
+    &nbsp;&nbsp;&nbsp;<a href="Overthecounter.html">Over-the-Counter Drugs</a>
+    </div>
+    <br>
+    &nbsp;&nbsp;&nbsp;<div class="tooltip">
+        <span class="tooltiptext">Do you really need to order this online?</span><a href="Because_this_is_not_what_youre_here_for.html">First-Aid</a></div>
+    <br>
+    &nbsp;&nbsp;&nbsp;<div class="tooltip">
+        <span class="tooltiptext">We're out.</span>
+
+        <a href="Stop_running.html">At Home Test Kits</a></div>
+    <br>
+    <diV class="tooltip">
+        <span class="tooltiptext">Coming soon, when we get our license</span>
+    &nbsp;&nbsp;&nbsp;<a href="Soon_it_will_be_easier.html">Surgical Equipment</a>
+    </div>
+    <div class="lr">Stats<br>
+        </div></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="tooltip2">
+            <span class="tooltiptext2">Just trust us</span>
+        Over <b>100 Million</b> customers <br>
+       served, over <b>100 Million</b>lives <br>
+        changed.</div>
+       <center>
+        <div class="center">
+            <img src="bostondoctor.jpeg">
+            <br>
+            
+            <a href="profilesetup">join our organ donor rewards program</a>
+            </center>
+            
+        </div>
+
+  
+</body>
